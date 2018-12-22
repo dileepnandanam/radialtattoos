@@ -1,0 +1,26 @@
+-if current_user && current_user.admin
+  %h1 Listing tatoos
+
+  %table
+    %thead
+      %tr
+        %th Premium
+        %th
+        %th
+        %th
+
+    %tbody
+      - @tatoos.each do |tatoo|
+        %tr
+          %td
+            = image_tag(tatoo.image.url(:thumb))
+          %td= tatoo.premium ? 'premium' : 'free'
+          %td= link_to 'Show', tatoo
+          %td= link_to 'Edit', edit_tatoo_path(tatoo)
+          %td= link_to 'Destroy', tatoo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  %br
+
+  = link_to 'New Tatoo', new_tatoo_path
+- else
+  = render partial: 'public_tatoos'

@@ -1,0 +1,4 @@
+.tatoo-large
+  = @tatoo.premium ? image_tag(@tatoo.image.url(:medium)) : image_tag(@tatoo.image.url(:original))
+  .buy-tatoo
+    = link_to 'Buy', purchase_start_tatoo_path(@tatoo)

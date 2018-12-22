@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  root to: 'tatoos#index'
+  resources :tatoos do
+  	get :purchase_start, on: :member
+  	get :purchase_complete, on: :member
+  end
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

@@ -1,0 +1,4 @@
+- @tatoos.each do |tatoo|
+  .tatoo.pull-left
+    = link_to tatoo_path(tatoo) do
+      = image_tag(tatoo.image.url(:medium))
