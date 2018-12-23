@@ -1,4 +1,10 @@
 .tatoo-large
+  .pagination-links
+    .pagination-link.previus.pull-left
+      = link_to 'Previous', tatoo_path(next_item(@tatoos.to_a, @tatoo, -1))
+    .pagination-link.next.pull-right
+      = link_to 'Next', tatoo_path(next_item(@tatoos.to_a, @tatoo, 1))
   = @tatoo.premium ? image_tag(@tatoo.image.url(:medium)) : image_tag(@tatoo.image.url(:original))
   .buy-tatoo
-    = link_to 'Buy', purchase_start_tatoo_path(@tatoo)
+    - if @tatoo.premium
+      = link_to 'Buy this tatoo to get full size image', purchase_start_tatoo_path(@tatoo)

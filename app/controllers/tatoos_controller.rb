@@ -10,6 +10,7 @@ class TatoosController < ApplicationController
   # GET /tatoos/1
   # GET /tatoos/1.json
   def show
+    @tatoos = Tatoo.all
   end
 
   # GET /tatoos/new
@@ -75,7 +76,7 @@ class TatoosController < ApplicationController
   end
 
   def purchase_complete
-    if session[:im_payment_request_id] == params[:payment_request_id]
+    if session[:im_payment_request_id].present? && session[:im_payment_request_id] == params[:payment_request_id]
       send_data open(@tatoo.image.url(:original)).read, disposition: 'inline', filename: 'tattoo.png'
     end
   end
