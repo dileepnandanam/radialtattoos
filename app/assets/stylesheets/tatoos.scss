@@ -1,13 +1,27 @@
 .tatoo {
-	margin: 5px;
+	padding: 10px !important;
+}
+.tatoo-inner {
+	width: 100%;
+	padding: 5px;
 	border: 1px solid;
+	min-height: 200px;
+}
+.tatoo-inner a {
+	width: 100%;
+}
+.tatoo-inner a img {
+	width: 100%;
 }
 .buy-tatoo {
 	margin: 10px;
 }
-.tatoo-large img {
+.tatoo-large .tatoo-wrapper {
 	margin: auto;
 	display: inherit;
+}
+.tatoo-wrapper img {
+	width: 100%;
 }
 .pagination-link {
 	margin: 10px;

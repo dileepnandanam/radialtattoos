@@ -43,7 +43,7 @@ class TatoosController < ApplicationController
   def update
     respond_to do |format|
       if @tatoo.update(tatoo_params)
-        format.html { redirect_to @tatoo, notice: 'Tatoo was successfully updated.' }
+        format.html { redirect_to tatoos_path, notice: 'Tatoo was successfully updated.' }
         format.json { render :show, status: :ok, location: @tatoo }
       else
         format.html { render :edit }
