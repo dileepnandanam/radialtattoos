@@ -1,5 +1,5 @@
 class TatoosController < ApplicationController
-  before_action :set_tatoo, only: [:show, :edit, :update, :destroy, :purchase_start, :purchase_complete]
+  before_action :set_tatoo, only: [:show, :edit, :update, :destroy, :purchase_start, :purchase_complete, :toggle_premium]
   before_action :access_controll, only: [:new, :edit, :update, :destroy]
   # GET /tatoos
   # GET /tatoos.json
@@ -79,6 +79,29 @@ class TatoosController < ApplicationController
     if session[:im_payment_request_id].present? && session[:im_payment_request_id] == params[:payment_request_id]
       send_data open(@tatoo.image.url(:original)).read, disposition: 'inline', filename: 'tattoo.png'
     end
+  end
+
+  def mass_upload_form
+
+  end
+
+  def mass_upload
+    mass_upload_params = params.require(:mass_upload).permit(image: [])
+    mass_upload_params[:image].each do |file_data|
+      Tatoo.new(image: file_data).save
+    end
+    redirect_to tatoos_path
+  end
+
+  def toggle_premium
+    if @tatoo.premium
+      @tatoo.update_attribute(:premium, false)
+      @state = 'Free'
+    else
+      @tatoo.update_attribute(:premium, true)
+      @state = 'Premium'
+    end
+    render 'toggle_premium', layout: false
   end
 
   private
