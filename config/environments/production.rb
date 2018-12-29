@@ -86,8 +86,8 @@ Rails.application.configure do
     :s3_host_name => 's3.ap-south-1.amazonaws.com',
     :s3_region => 'ap-south-1',
     s3_credentials: {
-      access_key_id: 'AKIAIZSOLSZIMTU6LYUQ',
-      secret_access_key: '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'
+      access_key_id: 'AKIAJKDJA7WKU2IFS5FA',
+      secret_access_key: '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'
     }
   }
 end

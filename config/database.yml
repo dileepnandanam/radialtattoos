@@ -20,8 +20,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  user: ubuntu
+  user: root
   password: root@2008
   pool: 5
   timeout: 5000
-  database: tatoodesigns_prod
+  database: tatoodesigns_dev
