@@ -9,3 +9,5 @@
           = 'Free'
       = link_to tatoo_path(tatoo) do
         = image_tag(tatoo.image.url(:medium))
+.clearfix
+= will_paginate(@tatoos)
