@@ -6,4 +6,8 @@ $(document).on('turbolinks:load', function(){
 	$('.tatoo-link').on('click', function(){
 		$('.preview').attr('src', $(this).data('url'))
 	})
+
+	$('.delete-tatoo').on('click', function(){
+		$(this).closest('tr').remove()
+	})
 })

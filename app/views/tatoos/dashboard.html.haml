@@ -17,7 +17,7 @@
           %td= tatoo.premium ? 'premium' : 'free'
           %td= link_to 'Show', tatoo, remote: true, data: {url: tatoo.image.url(:original)}, class: 'tatoo-link'
           %td= link_to 'Edit', edit_tatoo_path(tatoo)
-          %td= link_to 'Destroy', tatoo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          %td= link_to 'Destroy', tatoo, :class => 'delete-tatoo', :method => :delete, :remote => true
           %td= link_to (tatoo.premium ? 'Premium' : 'Free'), toggle_premium_tatoo_path(tatoo), remote: true, class: 'toggle-premium-link', method: :put
 .preview-tatoo.pull-right
   %img.preview

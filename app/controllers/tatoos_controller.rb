@@ -57,7 +57,7 @@ class TatoosController < ApplicationController
   def destroy
     @tatoo.destroy
     respond_to do |format|
-      format.html { redirect_to tatoos_url, notice: 'Tatoo was successfully destroyed.' }
+      format.html { head :no_content }
       format.json { head :no_content }
     end
   end
