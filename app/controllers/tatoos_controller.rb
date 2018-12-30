@@ -1,6 +1,6 @@
 class TatoosController < ApplicationController
   before_action :set_tatoo, only: [:show, :edit, :update, :destroy, :purchase_start, :purchase_complete, :toggle_premium]
-  before_action :access_controll, only: [:new, :edit, :update, :destroy]
+  before_action :access_controll, only: [:new, :edit, :update, :destroy, :dashboard]
   # GET /tatoos
   # GET /tatoos.json
   def index
@@ -102,6 +102,10 @@ class TatoosController < ApplicationController
       @state = 'Premium'
     end
     render 'toggle_premium', layout: false
+  end
+
+  def dashboard
+    @tatoos = Tatoo.all
   end
 
   private

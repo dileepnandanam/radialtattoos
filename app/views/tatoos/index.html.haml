@@ -1,34 +1,11 @@
--if current_user && current_user.admin
-  .listing-tatoos.pull-left
-    %h1 Listing tatoos
-
-    %table
-      %thead
-        %tr
-          %th Premium
-          %th
-          %th
-          %th
-
-      %tbody
-        - @tatoos.each do |tatoo|
-          %tr
-            %td
-              = image_tag(tatoo.image.url(:thumb))
-            %td= tatoo.premium ? 'premium' : 'free'
-            %td= link_to 'Show', tatoo, remote: true, data: {url: tatoo.image.url(:original)}, class: 'tatoo-link'
-            %td= link_to 'Edit', edit_tatoo_path(tatoo)
-            %td= link_to 'Destroy', tatoo, :method => :delete, :data => { :confirm => 'Are you sure?' }
-            %td= link_to (tatoo.premium ? 'Premium' : 'Free'), toggle_premium_tatoo_path(tatoo), remote: true, class: 'toggle-premium-link', method: :put
-  .preview-tatoo.pull-right
-    %img.preview
-  .clearfix
-  %br
-
-  = link_to 'New Tatoo', new_tatoo_path
-  %br
-  = link_to 'Mass upload', mass_upload_form_tatoos_path
-  %br
-  = link_to 'Sign out', destroy_user_session_path, method: :delete
-- else
-  = render partial: 'public_tatoos'
+.banner
+  %h1
+    Radial tattoos
+- @tatoos.each do |tatoo|
+  .tatoo.pull-left.col-lg-3.col-sm-4.col-xs-6
+    .tatoo-inner
+      - unless tatoo.premium
+        .free-label
+          = 'Free'
+      = link_to tatoo_path(tatoo) do
+        = image_tag(tatoo.image.url(:medium))

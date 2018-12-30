@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
 	$('.toggle-premium-link').on('ajax:success', function(e, data, status, xhr){
 		$(this).html(data)
 	})
