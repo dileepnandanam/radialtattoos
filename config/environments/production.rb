@@ -82,12 +82,12 @@ Rails.application.configure do
 
   config.paperclip_defaults = {
     :storage => :s3,
-    :bucket => 'lototribe1',
+    :bucket => 'radialtattoos',
     :s3_host_name => 's3.ap-south-1.amazonaws.com',
     :s3_region => 'ap-south-1',
     s3_credentials: {
-      access_key_id: 'AKIAJKDJA7WKU2IFS5FA',
-      secret_access_key: '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'
+      access_key_id: 'AKIAJWVZAU7S42WUCXXQ',
+      secret_access_key: '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'
     }
   }
 end
