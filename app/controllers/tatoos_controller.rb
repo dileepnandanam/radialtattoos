@@ -105,7 +105,7 @@ class TatoosController < ApplicationController
   end
 
   def dashboard
-    @tatoos = Tatoo.all
+    @tatoos = Tatoo.order('image_file_name').all
   end
 
   private
