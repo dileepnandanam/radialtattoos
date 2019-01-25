@@ -6,6 +6,7 @@
 	padding: 5px;
 	border: 1px solid;
 	min-height: 200px;
+	box-shadow: 5px 10px 8px #888888;
 }
 .tatoo-inner a {
 	width: 100%;
@@ -48,4 +49,13 @@
 }
 .banner {
 	padding: 20px; 
+}
+.pagination-links {
+	padding: 20px 20px 40px 20px;
+}
+.pagination a,em,span {
+	padding: 8px;
+	margin: 2px;
+	border-radius: 3px;
+	border: 1px solid;
 }
