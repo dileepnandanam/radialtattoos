@@ -4,7 +4,7 @@ class TatoosController < ApplicationController
   # GET /tatoos
   # GET /tatoos.json
   def index
-    @tatoos = Tatoo.paginate(per_page: 32, page: params[:page])
+    @tatoos = Tatoo.paginate(per_page: 12, page: params[:page])
   end
 
   # GET /tatoos/1
