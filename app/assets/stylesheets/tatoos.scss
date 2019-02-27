@@ -64,3 +64,21 @@
 	font-size: 26px;
 	background-color: black;
 }
+.catagory-tabs {
+	border-bottom: 1px solid;
+	margin-bottom: 10px;
+}
+.tab {
+	border-radius: 10px 10px 0px 0px;
+	border: 1px solid;
+	padding: 10px;
+	margin: 0px 10px -1px 10px;
+	background-color: white;
+}
+.tab:hover {
+	text-decoration: none;
+	color: white;
+}
+.current-tab {
+	border-bottom: 1px solid white;
+}

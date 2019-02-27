@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'tatoos#index'
   resources :tatoos do
+    get :premium, on: :collection
   	get :purchase_start, on: :member
   	get :purchase_complete, on: :member
   	get :mass_upload_form, on: :collection

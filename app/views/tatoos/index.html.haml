@@ -3,6 +3,11 @@
     Radial tattoos
   %p
     We have hundreds of radially symmetrical tattoo designs. The tattoo designs are complex computer generated images which are made on a custom graphics software with a little imagination. we have premium designs with high resolution image downloadable on purchase. Also we have a good collection of free designs.
+
+.catagory-tabs.col-12
+  = link_to 'Free', root_path, class: "tab pull-left #{action_name == 'index' ? 'current-tab' : ''}"
+  = link_to 'Premium', premium_tatoos_path, class: "tab pull-left #{action_name == 'premium' ? 'current-tab' : ''}"
+  .clearfix
 - @tatoos.each do |tatoo|
   .tatoo.pull-left.col-lg-3.col-sm-4.col-xs-6
     .tatoo-inner
