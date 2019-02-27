@@ -11,5 +11,7 @@
     = action_cable_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    - if Rails.env.production?
+      = render partial: 'layouts/ga_code'
   %body
     = yield
