@@ -113,6 +113,12 @@ class TatoosController < ApplicationController
     @tatoos = Tatoo.order('image_file_name').all
   end
 
+  def reorder
+    params[:sequence].each_with_index do |id, i|
+      Tatoo.find(id).update(sequence: i)
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tatoo

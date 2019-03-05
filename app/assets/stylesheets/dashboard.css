@@ -1,0 +1,16 @@
+.listing-tatoos {
+	margin: 20px;
+}
+.tatoo-dashboard-item {
+	border: 1px solid;
+	border-radius: 16px;
+	margin: 10px 30px 10px 0px;
+	padding: 10px;
+	background-color: white;
+}
+.tatoo-actions {
+	padding: 36px 0px 10px 10px;
+}
+.tatoo-actions div {
+	margin-right: 20px;
+}
