@@ -119,6 +119,10 @@ class TatoosController < ApplicationController
     end
   end
 
+  def sitemap
+    render :file=>"tatoos/sitemap.xml", :content_type => 'application/xml', layout: false
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tatoo

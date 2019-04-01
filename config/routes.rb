@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'tatoos#index'
+  get 'sitemap.xml', to: 'tatoos#sitemap'
   resources :tatoos do
     get :premium, on: :collection
   	get :purchase_start, on: :member
