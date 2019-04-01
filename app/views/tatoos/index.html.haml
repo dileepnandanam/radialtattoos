@@ -9,9 +9,9 @@
   = link_to 'Premium', premium_tatoos_path, class: "tab pull-left #{action_name == 'premium' ? 'current-tab' : ''}"
   .clearfix
 - @tatoos.each do |tatoo|
-  .tatoo.pull-left.col-lg-3.col-sm-4.col-xs-6
+  .tatoo.pull-left.col-lg-3.col-sm-4.col-6
     .tatoo-inner
-      - unless tatoo.premium
+      - unless true
         .free-label
           = 'Free'
       = link_to tatoo_path(tatoo) do
