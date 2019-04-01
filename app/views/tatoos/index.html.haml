@@ -17,7 +17,7 @@
       = link_to tatoo_path(tatoo) do
         = image_tag(tatoo.image.url(:medium))
 .clearfix
-.pagination-links
+.pagination-links-main
   = will_paginate(@tatoos, inner_window: 1, outer_window: 0)
 .footer.col-12
   .contact-no.pull-right
