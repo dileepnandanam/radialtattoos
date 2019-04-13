@@ -1,4 +1,9 @@
 .listing-tatoos.pull-left
+  %h1 Site settings
+  = form_for @settings[0], remote: true do |f|
+    = f.label f.object.name
+    = f.text_area :value
+    = f.submit
   %h1 Listing tatoos
 
   .tatoo-dashboard-items

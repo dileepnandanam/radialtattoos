@@ -110,7 +110,10 @@ class TatoosController < ApplicationController
   end
 
   def dashboard
-    @tatoos = Tatoo.order('image_file_name').all
+    @tatoos = Tatoo.all
+    @settings = [
+      Setting.where(name: 'description').first_or_create
+    ]
   end
 
   def reorder
