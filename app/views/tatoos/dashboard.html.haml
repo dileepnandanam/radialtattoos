@@ -12,7 +12,7 @@
     - @tatoos.each do |tatoo|
       .tatoo-dashboard-item{id: "sequence_#{tatoo.id}"}
         .tatoo-preview.pull-left
-          = image_tag(tatoo.image.url(:thumb))
+          = image_tag(tatoo.image.url(:thumb), alt: alt_text(tatoo))
         .tatoo-actions.pull-left  
           .pull-left= link_to 'Show', tatoo, remote: true, data: {url: tatoo.image.url(:original)}, class: 'tatoo-link'
           .pull-left= link_to 'Edit', edit_tatoo_path(tatoo)
