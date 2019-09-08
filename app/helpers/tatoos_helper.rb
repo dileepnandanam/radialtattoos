@@ -11,7 +11,8 @@ module TatoosHelper
     "beautiful tattoo design",
     "creepy tattoo design",
     "Famous tatoo design",
-    "trans tattoo design"
+    "trans tattoo design",
+    "attractive tattoo design"
   ]
 
   GENDER_ALT_TEXT = [
@@ -42,13 +43,32 @@ module TatoosHelper
     "This is an expesive tattoo design",
     "This is a free tatoo design"
   ]
+
+  PART_ALT_TEXT = [
+    "Head", "Eye", "Ear", "Nose", "Nostril", "Mouth", "Lip",
+    "Philtrum", "Jaw", "Mandible", "Gingiva", "Tooth", "Tongue",
+    "Throat", "Adam's apple", "Vertebral column", "Arm", "Elbow",
+    "Wrist", "Hand", "Fingers", "Thumb", "Nails", "Skin", "Hair",
+    "Chest", "Breast Mammalia", "Abdomen (roughly Stomach)",
+    "Sex organs", "Penis (male)", "Scrotum (male)", "Vulva (female)",
+    "Leg", "Thigh", "Knee", "Kneecap", "Shinbone", "Calf",
+    "Ankle", "Foot", "Dick", "Vagina", "Glance", "Ass", "Butt",
+    "Navel", "Belly", "Nipple", "Chest", "Forehead", "Cheek",
+    "Chin", "Lip", "Nose", "Neck", "Finger", "Feet", "Back",
+    "Shoulder", "Armpit", "Clit"].map{|part| "#{part} tattoo"}
+
+  def title(tattoo)
+    CATEGORY_ALT_TEXT[tatoo.id]
+  end
+
   def alt_text(tatoo)
     id = tatoo.id
-    category = CATEGORY_ALT_TEXT[i%CATEGORY_ALT_TEXT.length]
-    gender = GENDER_ALT_TEXT[i%GENDER_ALT_TEXT.length]
-    orientation = ORIENTATION_ALT_TEXT[i%ORIENTATION_ALT_TEXT.length]
-    design = DESIGN_ALT_TEXT[i%DESIGN_ALT_TEXT.length]
-    cost = COST_ALT_TEXT[tattoo.premium? ? 1 : 0]
-    "#{category}. #{cost}. #{gender}. #{design}. #{orientation}"
+    category = CATEGORY_ALT_TEXT[id%CATEGORY_ALT_TEXT.length]
+    gender = GENDER_ALT_TEXT[id%GENDER_ALT_TEXT.length]
+    orientation = ORIENTATION_ALT_TEXT[id%ORIENTATION_ALT_TEXT.length]
+    design = DESIGN_ALT_TEXT[id%DESIGN_ALT_TEXT.length]
+    cost = COST_ALT_TEXT[tatoo.premium? ? 1 : 0]
+    part = [id%61, id%50, id%30, id%10].map{|i| PART_ALT_TEXT[i]}.join('. ')
+    "#{category}. #{cost}. #{gender}. #{design}. #{orientation}. #{part}"
   end
 end

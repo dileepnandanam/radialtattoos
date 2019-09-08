@@ -15,7 +15,7 @@
         .free-label
           = 'Free'
       = link_to tatoo_path(tatoo) do
-        = image_tag(tatoo.image.url(:medium))
+        = image_tag(tatoo.image.url(:medium), alt: alt_text(tatoo))
 .clearfix
 .pagination-links-main
   = will_paginate(@tatoos, inner_window: 1, outer_window: 0)

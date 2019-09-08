@@ -4,11 +4,13 @@ class TatoosController < ApplicationController
   # GET /tatoos
   # GET /tatoos.json
   def index
-    @tatoos = Tatoo.where(premium: [false, nil]).paginate(per_page: 12, page: params[:page])
+    @tatoos = Tatoo.where(premium: [false, nil])
+    @tatoos = @tatoos.paginate(per_page: (bot_request? ? @tatoos.count : 20), page: params[:page])
   end
 
   def premium
-    @tatoos = Tatoo.where(premium: true).paginate(per_page: 12, page: params[:page])
+    @tatoos = Tatoo.where(premium: true)
+    @tatoos = @tatoos.paginate(per_page: (bot_request? ? @tatoos.count : 20), page: params[:page])
     render 'index'
   end
 
