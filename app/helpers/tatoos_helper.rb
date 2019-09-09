@@ -57,6 +57,9 @@ module TatoosHelper
     "Chin", "Lip", "Nose", "Neck", "Finger", "Feet", "Back",
     "Shoulder", "Armpit", "Clit"].map{|part| "#{part} tattoo"}
 
+  COST_SHORT_TAG = ['premium tatto', 'free tatto']
+  GENDER_SHORT_TAG = ['for men', 'for women', 'for teens', 'for boys', 'for old', 'for transgenders']
+  
   def title(tattoo)
     CATEGORY_ALT_TEXT[tatoo.id]
   end
@@ -67,8 +70,15 @@ module TatoosHelper
     gender = GENDER_ALT_TEXT[id%GENDER_ALT_TEXT.length]
     orientation = ORIENTATION_ALT_TEXT[id%ORIENTATION_ALT_TEXT.length]
     design = DESIGN_ALT_TEXT[id%DESIGN_ALT_TEXT.length]
-    cost = COST_ALT_TEXT[tatoo.premium? ? 1 : 0]
-    part = [id%61, id%50, id%30, id%10].map{|i| PART_ALT_TEXT[i]}.join('. ')
+    cost = COST_ALT_TEXT[tatoo.premium? ? 0 : 1]
+    part = [id%61, id%50, id%30, id%10].uniq.map{|i| PART_ALT_TEXT[i]}.join('. ')
     "#{category}. #{cost}. #{gender}. #{design}. #{orientation}. #{part}"
+  end
+
+  def title_for(tatoo)
+    id = tatoo.id
+    cost = COST_SHORT_TAG[tatoo.premium? ? 0 : 1]
+    gender = GENDER_SHORT_TAG[id%GENDER_ALT_TEXT.length]
+    "#{cost} #{gender}"
   end
 end
