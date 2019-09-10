@@ -55,7 +55,7 @@ module TatoosHelper
     "Ankle", "Foot", "Dick", "Vagina", "Glance", "Ass", "Butt",
     "Navel", "Belly", "Nipple", "Chest", "Forehead", "Cheek",
     "Chin", "Lip", "Nose", "Neck", "Finger", "Feet", "Back",
-    "Shoulder", "Armpit", "Clit"].map{|part| "#{part} tattoo"}
+    "Shoulder", "Armpit", "Clit"].map{|part| "this one is #{part} tattoo"}
 
   COST_SHORT_TAG = ['premium tatto', 'free tatto']
   GENDER_SHORT_TAG = ['for men', 'for women', 'for teens', 'for boys', 'for old', 'for transgenders']

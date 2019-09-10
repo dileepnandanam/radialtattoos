@@ -1,6 +1,7 @@
 - content_for :head do
   %title
     = title_for(@tatoo)
+%h1.name.heading= title_for(@tatoo)
 .tatoo-large
   .tatoo-wrapper.col-lg-5.col-sm-12
     .pagination-links
@@ -13,4 +14,4 @@
         - if @tatoo.premium
           = link_to 'Buy this tatoo to get full size image', purchase_start_tatoo_path(@tatoo)
     = @tatoo.premium ? image_tag(@tatoo.image.url(:medium), alt: alt_text(@tatoo)) : image_tag(@tatoo.image.url(:original), alt: alt_text(@tatoo))
-  
+  %p.description= alt_text(@tatoo)
