@@ -11,6 +11,6 @@
       .clearfix
       .buy-tatoo.previus
         - if @tatoo.premium
-          = link_to 'Buy this tatoo to get full size image', purchase_start_tatoo_path(@tatoo)
+          = link_to 'Pay Rs. 100/- to get full size image', purchase_start_tatoo_path(@tatoo)
     = @tatoo.premium ? image_tag(@tatoo.image.url(:medium), alt: alt_text(@tatoo)) : image_tag(@tatoo.image.url(:original), alt: alt_text(@tatoo))
   %p.description.white= alt_text(@tatoo)
