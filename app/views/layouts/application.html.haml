@@ -13,5 +13,7 @@
     = yield :head
     - if Rails.env.production?
       = render partial: 'layouts/ga_code'
-  %body
+  %body{style: bot_request? ? "background-image: url('http://downloadwallpaperhd.xyz/wp-content/uploads/2019/02/desktop-wallpaper-hd-universe-nebula-desktop-backgrounds-hd-cool-7-hd-wallpapers-of-desktop-wallpaper-hd-universe.jpg')" : ''}
+    = link_to '/', rel: 'nofollow', class: 'heading' do
+      %h1.name.white= title_for(@tatoo)
     = yield

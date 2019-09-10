@@ -5,7 +5,6 @@
 	width: 100%;
 	padding: 5px;
 	border: 1px solid;
-	box-shadow: 5px 10px 8px #888888;
 	border-radius: 16px;
   overflow: hidden;
 }
@@ -19,6 +18,7 @@
 .buy-tatoo {
 	margin: 10px;
 	text-align: center;
+	display: block;
 }
 .tatoo-large .tatoo-wrapper {
 	margin: auto;
@@ -77,16 +77,16 @@
 	background-color: black;
 }
 .catagory-tabs {
-	border-bottom: 1px solid;
+	border-bottom: 1px solid white;
 	margin-bottom: 10px;
 }
 .tab {
-	border-radius: 10px 10px 0px 0px;
-	border: 1px solid black;
+	border-radius: 4px 4px 0px 0px;
+	border: 1px solid white;
 	padding: 10px;
 	margin: 0px 10px -1px 10px;
-	background-color: white;
-	color: black;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
 }
 .tab:hover {
 	text-decoration: none;
@@ -94,14 +94,33 @@
 	background-color: black;
 }
 .current-tab {
-	border-bottom: 1px solid white;
+	border-bottom: 1px solid black;
 }
 .heading {
 	padding: 12px;
 	margin: auto;
-	width: 60%;
-	text-allign: center;
+	width: 100%;
+	text-align: center;
+	background-color: rgba(152, 141, 12, 0.7);
+	display: block;
+}
+.heading:hover {
+	text-decoration: none;
+	background-color: black;
 }
 .description {
 	padding: 12px;
+	font-size: 22px;
+}
+.previus a, .next a {
+  background-color: black;
+  padding: 12px;
+  border-radius: 10px;
+}
+.previus a:hover, .next a:hover {
+  background-color: red !important;
+  padding: 14px;
+  border-radius: 12px;
+  text-decoration: none !important;
+  font-weight: bold;
 }

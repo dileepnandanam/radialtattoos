@@ -76,6 +76,7 @@ module TatoosHelper
   end
 
   def title_for(tatoo)
+    return 'Radial Tattoos' unless tatoo
     id = tatoo.id
     cost = COST_SHORT_TAG[tatoo.premium? ? 0 : 1]
     gender = GENDER_SHORT_TAG[id%GENDER_ALT_TEXT.length]
