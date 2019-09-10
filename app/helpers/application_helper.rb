@@ -4,7 +4,6 @@ module ApplicationHelper
   end
 
   def bot_request?
-    return true
     user_agent =  request.env['HTTP_USER_AGENT'].downcase
     user_agent.index('googlebot')
   end
