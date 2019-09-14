@@ -21,13 +21,13 @@ module TatoosHelper
     "this is a tattoo for teens",
     "this is a tattoo for boys",
     "this is a tattoo for old",
-    "this is a tattoo for shemale, trans gender"
+    "this is a tattoo for trans gender"
   ]
 
   ORIENTATION_ALT_TEXT = [
-    "this tattoo is for lesbians",
-    "this tattoo is for gays",
-    "straight tattoo",
+    "this tattoo is for lesbians too",
+    "this tattoo is for gays too",
+    "suitable for anyone",
     "this is a tatoo for black"
   ]
 
