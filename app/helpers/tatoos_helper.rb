@@ -27,7 +27,7 @@ module TatoosHelper
   ORIENTATION_ALT_TEXT = [
     "this tattoo is for lesbians",
     "this tattoo is for gays",
-    "suitable for anyone"
+    "suitable for anyone",
     "suitable for dark skin"
   ]
 
