@@ -72,7 +72,7 @@ class TatoosController < ApplicationController
   def purchase_start
     im_client = Instamojo::API.new("bea354f9f9808d2bc2e5d5ebbe7ff3d5", "0950fc7e9fa1c27462c075d81f956359").client
     payment_request = im_client.payment_request({
-      amount: 100,
+      amount: @tatoo.price,
       purpose: 'Product payment',
       redirect_url: purchase_complete_tatoo_url(@tatoo)
     })
