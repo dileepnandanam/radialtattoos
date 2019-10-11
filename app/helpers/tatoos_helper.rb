@@ -18,17 +18,17 @@ module TatoosHelper
   GENDER_ALT_TEXT = [
     "this is a tattoo for men",
     "this is a tattoo for women",
-    "this is a tattoo for teens",
+    "this is a tattoo for girls",
     "this is a tattoo for boys",
-    "this is a tattoo for old",
-    "this is a tattoo for trans gender"
+    "this is a tattoo for mature",
+    "this is a tattoo for pide trans gender"
   ]
 
   ORIENTATION_ALT_TEXT = [
-    "this tattoo is for lesbians too",
-    "this tattoo is for gays too",
-    "suitable for anyone",
-    "this is a tatoo for black"
+    "this tattoo is for lesbians",
+    "this tattoo is for gays",
+    "suitable for anyone"
+    "suitable for dark skin"
   ]
 
   DESIGN_ALT_TEXT = [
@@ -58,7 +58,7 @@ module TatoosHelper
     "Shoulder", "Armpit", "Clit"].map{|part| "this one is #{part} tattoo"}
 
   COST_SHORT_TAG = ['premium tatto', 'free tatto']
-  GENDER_SHORT_TAG = ['for men', 'for women', 'for teens', 'for boys', 'for old', 'for transgenders']
+  GENDER_SHORT_TAG = ['for men', 'for women', 'for teens', 'for boys', 'for old', 'for pride transgenders']
   
   def title(tattoo)
     CATEGORY_ALT_TEXT[tatoo.id]
